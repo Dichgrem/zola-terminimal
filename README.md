@@ -1,5 +1,9 @@
 # Terminimal
 
+<p align="center">
+  <img src="https://github.com/Dichgrem/zola-terminimal/blob/master/pagespeed.png" width="400">
+</p>
+
 [![Build Status](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment)
 ![No JavaScript](https://img.shields.io/badge/JavaScript-none-brightgreen.svg)
 

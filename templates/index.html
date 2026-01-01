@@ -32,6 +32,25 @@
 
     {%- block extra_head %}
     {% endblock extra_head -%}
+
+    <!-- ✅ Added center alignment styles -->
+    <style>
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .footer__inner {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="">
@@ -65,8 +84,9 @@
     </header>
     {% endblock header %}
 
-    <div class="content">
-        {% block content %}
+    <main>
+        <div class="content">
+            {% block content %}
         <div class="posts">
             {%- if paginator %}
                 {%- set show_pages = paginator.pages -%}
@@ -103,10 +123,10 @@
             </div>
         </div>
         {% endblock content %}
-    </div>
-
-    {% block footer %}
-    <footer class="footer">
+            </div>
+        </main>
+    
+        {% block footer %}    <footer class="footer">
         <div class="footer__inner">
             {%- if config.extra.copyright_html %}
                 <div class="copyright copyright--user">{{ config.extra.copyright_html | safe }}</div>
@@ -119,18 +139,17 @@
                     {% endif -%}
 
                     <span class="copyright-theme">
-                        <span class="copyright-theme-sep">:: </span>
-                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                        <span class="copyright-theme-sep"> :: CC BY-SA 4.0 :: A friend comes from distant lands</span>
+                        </a>
                     </span>
                 </div>
             {% endif -%}
         </div>
     </footer>
     {% endblock footer %}
-
 </div>
 {%- block extra_body %}
 {% endblock extra_body -%}
 </body>
-
 </html>
+

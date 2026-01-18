@@ -63,6 +63,22 @@ compile_sass = true
 Also see the Zola documentation on using themes:
 https://www.getzola.org/documentation/themes/installing-and-using-themes/
 
+ ## Features
+
+- **Search Functionality** - Built-in search powered by PagefindUI for instant content discovery
+- **Table of Contents (TOC)** - Automatic TOC generation for posts with multi-level heading navigation
+- **Code Copy Button** - One-click copy button for all code blocks with visual feedback
+- **RSS/Atom Feed** - Enhanced RSS/Atom feed with beautiful XSLT styling
+- **No JavaScript** - Pure static site with optional minimal JS for interactive features
+- **Responsive Design** - Mobile-friendly layout that adapts to all screen sizes
+- **Customizable Colors** - Multiple accent and background color themes
+- **Syntax Highlighting** - Zola native syntax highlighting support
+- **Pagination** - Full pagination support for post lists and post navigation
+- **Tag Support** - Optional taxonomy system for content categorization
+- **Menu Customization** - Fully configurable static menu
+- **OpenGraph & Twitter Cards** - Built-in social media meta tags
+- **Shortcodes** - Custom image and figure shortcodes for rich media handling
+
 ## Shortcodes
 
 The theme adds two custom shortcodes related to image handling.
@@ -349,6 +365,63 @@ Use `"combined"` to render titles as `"Page title | Main title"`.
 page_titles = "combined"
 ```
 
+### Search
+
+The theme includes a built-in search functionality powered by PagefindUI.
+To enable search, add it to your menu in `config.toml`:
+
+```toml
+[extra]
+menu_items = [
+    {name = "Search", url = "$BASE_URL/search"},
+]
+```
+
+The search page will be automatically available at `/search` once your site is built.
+
+### Table of Contents
+
+The TOC (Table of Contents) is automatically generated for posts.
+It displays when a post has headings and is shown on screens wider than 1400px.
+Configure TOC depth in your `config.toml`:
+
+```toml
+[markdown]
+table_of_contents = { start_level = 2, end_level = 4 }
+```
+
+The TOC floats on the right side and provides smooth scrolling navigation.
+
+### Code Copy Button
+
+Code blocks automatically get a "Copy" button on hover.
+Click to copy, with visual feedback showing "Copied!" and "Failed" states.
+No configuration needed - works automatically with Zola's syntax highlighting.
+
+### RSS/Atom Feed
+
+The theme supports both RSS and Atom feeds with enhanced styling:
+- Beautiful XSLT transformation for browser viewing
+- Clean feed styling with Water.css
+- Compatible with all RSS readers
+
+Enable feeds in `config.toml`:
+
+```toml
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+```
+
+Add to menu:
+
+```toml
+[extra]
+menu_items = [
+    {name = "RSS", url = "$BASE_URL/atom.xml"},
+]
+```
+
+
 All the configuration options are also described in
 [`config.toml`](../master/config.toml).
 
@@ -407,11 +480,15 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
 
 ### New features
 
-- You can pick the accent color as well as background color.
+- You can pick an accent color as well as background color.
   There's a new `dark` background. See [Configuration](#configuration)
   below for details.
-- Active "section" links will change color indicating the
+- Active "section" links will change color indicating
   active section. This is all static, done at template level.
+- **Built-in search** powered by PagefindUI for instant content discovery
+- **Automatic Table of Contents** (TOC) with multi-level heading navigation
+- **Code copy button** on all code blocks with visual feedback
+- **Enhanced RSS/Atom feeds** with XSLT styling for better readability
 
 ### Features retained from the original
 
